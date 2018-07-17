@@ -13,15 +13,19 @@ public class PalindromeInteger {
 
     private static int reverse(int number) {
         String convertToString = Integer.toString(number);
-        char[] warray = convertToString.toCharArray();
-        int reverseNumber = 0;
-        for (int i = 0; i < warray.length / 2; i++) {
-            char temp = warray[i];
-            warray[i] = warray[warray.length - i - 1];
-            warray[warray.length - i - 1] = temp;
-             reverseNumber = Integer.parseInt(String.valueOf(warray));
-        }
-        return number = reverseNumber;
+//        char[] warray = convertToString.toCharArray();
+//        int reverseNumber = 0;
+//        for (int i = 0; i < warray.length / 2; i++) {
+//            char temp = warray[i];
+//            warray[i] = warray[warray.length - i - 1];
+//            warray[warray.length - i - 1] = temp;
+//             reverseNumber = Integer.parseInt(String.valueOf(warray));
+//        }
+//        return number = reverseNumber;
+        StringBuilder stringBuilder = new StringBuilder(convertToString);
+        stringBuilder.reverse();
+        Integer reverseNumber = Integer.parseInt(String.valueOf(stringBuilder));
+        return reverseNumber;
         }
 
         public static boolean isPalindrome(int number){
